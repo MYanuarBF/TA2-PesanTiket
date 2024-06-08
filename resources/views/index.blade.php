@@ -65,9 +65,7 @@
                         <img src="assets/img/kegiatan/kegiatan1.png" class="card-img-top" alt="...">
                         <div class="card-body mb-5">
                             <h5 class="card-title">Wahana Padi</h5>
-                            <p class="card-text">
-                                Wahana Padi adalah salah satu kegiatan yang dapat Anda nikmati di tempat wisata edukasi kami. Anda akan diajak untuk belajar tentang proses pertanian padi, mulai dari penanaman hingga panen. Selain itu, Anda juga dapat berinteraksi langsung dengan padi yang tumbuh di sawah. Nikmati pengalaman belajar yang menyenangkan dan bermanfaat di Wahana Padi!
-                            </p>
+                            <p class="card-text">Wahana Padi adalah salah satu kegiatan di tempat wisata edukasi kami. Anda akan belajar tentang proses pertanian padi, mulai dari penanaman hingga panen. Nikmati pengalaman belajar yang menyenangkan di Wahana Padi!</p>
                             </p>
                         </div>
                     </div>
@@ -77,7 +75,9 @@
                         <img src="assets/img/kegiatan/kegiatan2.png" class="card-img-top" alt="...">
                         <div class="card-body mb-5">
                             <h5 class="card-title">Membajak Sawah</h5>
-                            <p class="card-text">Membajak Sawah adalah salah satu kegiatan yang dapat Anda nikmati di tempat wisata edukasi kami. Anda akan diajak untuk belajar tentang proses membajak sawah, mulai dari persiapan hingga teknik-teknik yang digunakan. Selain itu, Anda juga dapat merasakan sensasi langsung membajak sawah dengan alat tradisional. Nikmati pengalaman belajar yang menyenangkan dan bermanfaat di Membajak Sawah!</p>
+                            <p class="card-text">
+                                Membajak Sawah adalah salah satu kegiatan di tempat wisata edukasi kami. Anda akan belajar tentang proses membajak sawah, mulai dari persiapan hingga teknik-teknik yang digunakan. Nikmati pengalaman belajar yang menyenangkan di Membajak Sawah!
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                         <div class="card-body mb-5">
                             <h5 class="card-title">Mengenal Ekosistem Sungai</h5>
                             <p class="card-text">
-                                Mengenal Ekosistem Sungai adalah salah satu kegiatan yang dapat Anda nikmati di tempat wisata edukasi kami. Anda akan diajak untuk mempelajari keanekaragaman hayati dan ekosistem yang ada di sekitar sungai. Selain itu, Anda juga dapat mengamati berbagai jenis hewan dan tumbuhan yang hidup di sungai. Nikmati pengalaman belajar yang menyenangkan dan bermanfaat di Mengenal Ekosistem Sungai!
+                                Mengenal Ekosistem Sungai adalah salah satu kegiatan di tempat wisata edukasi kami. Anda akan mempelajari keanekaragaman hayati dan ekosistem sungai. Nikmati pengalaman belajar yang menyenangkan di Mengenal Ekosistem Sungai!
                             </p>
                         </div>
                     </div>
@@ -99,25 +99,25 @@
     <section class="page-section" id="Harga">
         <h2 class="text-center mt-0">Harga Tiket</h2>
         <hr class="divider" />
-        <div class="container px-4 px-lg-5 " style="width: 50%;">
-        <div class="card mb-4 shadow-sm w-auto text-center">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal">Tiket Wisata Edukasi</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">RP. 50.000 <small class="text-muted">/ Orang</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="card mb-4 shadow-sm w-auto text-center">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Tiket Wisata Edukasi</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">RP. 50.000 <small class="text-muted">/ Orang</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
                 <li><b>Fasilitas yang didapat :</b></li>
-              <li>Makan Siang</li>
-              <li>ban untuk bermain di sungai</li>
-              <li>4 kamar mandi</li>
-              <li>Pendopo</li>
-            </ul>
-            <a href="{{ route('filament.admin.resources.transactions.create') }}">
+                <li>Makan Siang</li>
+                <li>ban untuk bermain di sungai</li>
+                <li>4 kamar mandi</li>
+                <li>Pendopo</li>
+                </ul>
+                <a href="{{ route('filament.admin.resources.transactions.create') }}">
                 <button type="button" class="btn btn-lg btn-block btn-outline-primary">Pesan Tiket</button>
-            </a>
-          </div>
-        </div>
+                </a>
+            </div>
+            </div>
     </section>
     <!-- Tentang-->
     <section class="page-section" id="tentang">
