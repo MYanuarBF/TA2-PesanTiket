@@ -20,7 +20,10 @@ class TransactionResource extends Resource implements HasShieldPermissions
 
     protected static ?string $navigationIcon = 'heroicon-o-ticket';
 
-    protected static ?string $label = 'Menu Pemesanan Tiket';
+    protected static ?string $navigationLabel = 'Menu Pemesanan Tiket';
+
+    protected static ?string $label = 'Transaksi';
+    
 
     public static function form(Form $form): Form
     {
@@ -40,6 +43,9 @@ class TransactionResource extends Resource implements HasShieldPermissions
                     ->numeric()
                     ->reactive()  // Make this field reactive to update total_harga on change
                     ->afterStateUpdated(fn ($state, callable $set) => $set('total_harga', $state * 50000)),
+                Forms\Components\DatePicker::make('tanggal')
+                    ->required()
+                    ->format('Y-m-d'),
                 Forms\Components\TextInput::make('total_harga')
                     ->required()
                     ->readOnly()
@@ -80,9 +86,14 @@ class TransactionResource extends Resource implements HasShieldPermissions
                     ->searchable(),
                 Tables\Columns\TextColumn::make('nomor_telepon')
                     ->searchable(),
+                
                 Tables\Columns\TextColumn::make('jumlah_orang')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('tanggal')
+                    ->date()
+                    ->sortable()
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('total_harga')
                     ->numeric()
                     ->money('idr')

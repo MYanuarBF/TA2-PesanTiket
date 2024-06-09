@@ -11,4 +11,7 @@ use Illuminate\Support\Facades\Redirect;
 class CreateTransaction extends CreateRecord
 {
     protected static string $resource = TransactionResource::class;
+
+    // protected static ?string $label = 'Pemesanan Tiket';
+
 }

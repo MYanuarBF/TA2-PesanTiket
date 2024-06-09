@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Transaction extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id','nama_lengkap','nomor_telepon','jumlah_orang','total_harga','status'];
+    protected $fillable = ['user_id','nama_lengkap','nomor_telepon','jumlah_orang','tanggal','total_harga','status'];
 
     public function user(): BelongsTo
     {

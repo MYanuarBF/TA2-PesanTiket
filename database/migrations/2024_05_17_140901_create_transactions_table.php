@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('nama_lengkap', 100);
             $table->string('nomor_telepon', 15);
             $table->integer('jumlah_orang');
+            $table->date('tanggal')->nullable();
             $table->decimal('total_harga', 10, 2);
             $table->string('status');
             $table->timestamps();
