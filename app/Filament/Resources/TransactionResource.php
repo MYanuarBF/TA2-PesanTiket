@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\TransactionResource\Pages;
 use App\Models\Transaction;
+use App\Models\Price;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -37,15 +38,20 @@ class TransactionResource extends Resource implements HasShieldPermissions
                 Forms\Components\TextInput::make('nomor_telepon')
                     ->tel()
                     ->required()
-                    ->maxLength(15),
+                    ->maxLength(15)
+                    ->numeric(), // Hanya bisa diisi angka
                 Forms\Components\TextInput::make('jumlah_orang')
                     ->required()
                     ->numeric()
-                    ->reactive()  // Make this field reactive to update total_harga on change
-                    ->afterStateUpdated(fn ($state, callable $set) => $set('total_harga', $state * 50000)),
+                    ->reactive()
+                    ->afterStateUpdated(function ($state, callable $set, callable $get) {
+                        $price = Price::first()->amount; // Ambil harga dari tabel prices
+                        $set('total_harga', $state * $price);
+                    }),
                 Forms\Components\DatePicker::make('tanggal')
                     ->required()
-                    ->format('Y-m-d'),
+                    ->format('Y-m-d')
+                    ->minDate(today()), // Tidak bisa memilih tanggal yang sudah lewat
                 Forms\Components\TextInput::make('total_harga')
                     ->required()
                     ->readOnly()
