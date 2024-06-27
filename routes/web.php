@@ -23,3 +23,4 @@ Route::get('/', function () {
 
 Route::post('/payment/notification', [PaymentController::class, 'handleNotification'])->name('payment.notification');
 Route::get('/payment/{transaction}', [PaymentController::class, 'pay'])->name('payment.pay');
+Route::get('/payment/print/{transaction}', [PaymentController::class, 'print'])->name('payment.print');

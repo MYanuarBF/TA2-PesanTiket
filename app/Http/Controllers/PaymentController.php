@@ -53,4 +53,11 @@ class PaymentController extends Controller
 
         return redirect()->route('filament.admin.resources.transactions.index');
     }
+
+    public function print(Transaction $transaction)
+    {
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadView('print', compact('transaction'));
+        return $pdf->download('nota-transaksi.pdf');
+    }
 }

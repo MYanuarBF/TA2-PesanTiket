@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
-use App\Models\Transaction;
+use App\Models\Price;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class TransactionPolicy
+class PricePolicy
 {
     use HandlesAuthorization;
 
@@ -15,15 +15,15 @@ class TransactionPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->can('view_any_transaction');
+        return $user->can('view_any_price');
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Transaction $transaction): bool
+    public function view(User $user, Price $price): bool
     {
-        return $user->can('view_transaction');
+        return $user->can('view_price');
     }
 
     /**
@@ -31,23 +31,23 @@ class TransactionPolicy
      */
     public function create(User $user): bool
     {
-        return $user->can('create_transaction');
+        return $user->can('create_price');
     }
 
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Transaction $transaction): bool
+    public function update(User $user, Price $price): bool
     {
-        return $user->can('update_transaction');
+        return $user->can('update_price');
     }
 
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Transaction $transaction): bool
+    public function delete(User $user, Price $price): bool
     {
-        return $user->can('delete_transaction');
+        return $user->can('delete_price');
     }
 
     /**
@@ -55,13 +55,13 @@ class TransactionPolicy
      */
     public function deleteAny(User $user): bool
     {
-        return $user->can('delete_any_transaction');
+        return $user->can('delete_any_price');
     }
 
     /**
      * Determine whether the user can permanently delete.
      */
-    public function forceDelete(User $user, Transaction $transaction): bool
+    public function forceDelete(User $user, Price $price): bool
     {
         return $user->can('{{ ForceDelete }}');
     }
@@ -77,7 +77,7 @@ class TransactionPolicy
     /**
      * Determine whether the user can restore.
      */
-    public function restore(User $user, Transaction $transaction): bool
+    public function restore(User $user, Price $price): bool
     {
         return $user->can('{{ Restore }}');
     }
@@ -93,7 +93,7 @@ class TransactionPolicy
     /**
      * Determine whether the user can replicate.
      */
-    public function replicate(User $user, Transaction $transaction): bool
+    public function replicate(User $user, Price $price): bool
     {
         return $user->can('{{ Replicate }}');
     }

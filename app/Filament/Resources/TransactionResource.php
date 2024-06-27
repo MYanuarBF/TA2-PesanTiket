@@ -126,7 +126,13 @@ class TransactionResource extends Resource implements HasShieldPermissions
                 ->button()
                 ->url(fn ($record) => route('payment.pay', $record))
                 ->labeledFrom('md')
-                ->visible(fn ($record) => $record->status === 'pending')
+                ->visible(fn ($record) => $record->status === 'pending'),
+                Action::make('cetak_nota')
+                    ->icon('heroicon-o-printer')
+                    ->button()
+                    ->url(fn ($record) => route('payment.print', $record))
+                    ->labeledFrom('md')
+                    ->visible(fn ($record) => $record->status === 'selesai'),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -163,3 +169,4 @@ class TransactionResource extends Resource implements HasShieldPermissions
         ];
     }
 }
+
